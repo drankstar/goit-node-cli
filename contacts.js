@@ -1,7 +1,7 @@
 import * as fs from "node:fs/promises"
 import * as path from "node:path"
 
-const contactsPath = path.resolve("src", "db", "contacts.json")
+const contactsPath = path.resolve("db", "contacts.json")
 
 async function readFile() {
   const data = await fs.readFile(contactsPath, { encoding: "utf-8" })

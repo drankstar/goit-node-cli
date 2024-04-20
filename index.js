@@ -1,5 +1,5 @@
 import { program } from "commander"
-import Contacts from "./src/contacts.js"
+import Contacts from "./contacts.js"
 program
   .option("-a, --action <type>", "choose action")
   .option("-i, --id <type>", "user id")
@@ -15,7 +15,7 @@ async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
       const contactsList = await Contacts.listContacts()
-      console.log(contactsList)
+      console.table(contactsList)
       break
 
     case "get":
